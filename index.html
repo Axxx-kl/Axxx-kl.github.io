@@ -1,194 +1,23 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  
+{% extends '_layout.swig' %}
+{% import '_macro/post.swig' as post_template %}
+{% import '_macro/sidebar.swig' as sidebar_template %}
 
-  
-  <title>Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:locale" content="en_US">
-<meta property="article:author" content="John Doe">
-<meta name="twitter:card" content="summary">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/favicon.png">
-  
-  
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
-  
-  
-<link rel="stylesheet" href="/css/style.css">
+{% block title %}{{ config.title }}{% if theme.index_with_subtitle and config.subtitle %} - {{config.subtitle }}{% endif %}{% endblock %}
 
-<meta name="generator" content="Hexo 5.2.0"></head>
+{% block page_class %}
+  {% if is_home() %}page-home{% endif -%}
+{% endblock %}
 
-<body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
-    </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
-        
-          <a class="main-nav-link" href="/">Home</a>
-        
-          <a class="main-nav-link" href="/archives">Archives</a>
-        
-      </nav>
-      <nav id="sub-nav">
-        
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
-        
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://example.com"></form>
-      </div>
-    </div>
-  </div>
-</header>
-      <div class="outer">
-        <section id="main">
-  
-    <article id="post-A-brief-overview-of-the-investment-strategies-in-the-middle-of-KWHS" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2020/11/21/A-brief-overview-of-the-investment-strategies-in-the-middle-of-KWHS/" class="article-date">
-  <time datetime="2020-11-21T13:14:26.064Z" itemprop="datePublished">2020-11-21</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2020/11/21/A-brief-overview-of-the-investment-strategies-in-the-middle-of-KWHS/">A brief overview of the investment strategies in the middle of KWHS</a>
-    </h1>
-  
+{% block content %}
+  <section id="posts" class="posts-expand">
+    {% for post in page.posts %}
+      {{ post_template.render(post, true) }}
+    {% endfor %}
+  </section>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>This is a brief description of my investment methods used in different stock sectors in the middle of the KWHS competition.</p>
-<ul>
-<li><h2 id="Consumer-discretionary-and-technology"><a href="#Consumer-discretionary-and-technology" class="headerlink" title="Consumer discretionary and technology"></a>Consumer discretionary and technology</h2><p>In terms of optional consumer goods, I chose the stock of Disney, which is well-known all over the world. Moreover, due to the epidemic in the first half of the year, Disney’s stock continued to grow in the second half of 2020. In terms of technology, I chose 300537. This stock has a downward trend in the short term, but in the long run, this stock is still on the rise. After the performance disclosure in the third quarter, the upward trend should be more obvious.</p>
-</li>
-<li><h2 id="Material-and-processing"><a href="#Material-and-processing" class="headerlink" title="Material and processing"></a>Material and processing</h2><p>Based on the Chinese market, due to the severe impact of the epidemic on demand and industrial chain, the utilization rate of industrial capacity is low at present, only 67.3% in the first quarter. However, the utilization rate of some industries is still high, for example, the utilization rate of oil and natural gas exploitation industry reached 89.9%. Therefore, I generally decide to invest in the oil industry sector in the early stage, and replace it with the raw material industry and processing industry sector in the later stage. For the US stock market, since there was an uncertainty of the current US economic policy and the effect of the pandemic, the whole market showed a trend of falling back, our team on the fence about a few stocks, such as X, BECN, CAR.</p>
-</li>
-<li><h2 id="Energy-and-utility"><a href="#Energy-and-utility" class="headerlink" title="Energy and utility"></a>Energy and utility</h2><p>Because of the global epidemic, public services are not doing well. As a result of the global epidemic, most people choose to stay indoors, so consumer demand is greatly reduced and public services are rarely needed. The state did not provide substantial subsidies, but instead poured money into medical production. So now is not a good time to invest in utilities.<br>Scientific research has also been affected. Most countries put all their money into buying medical equipment and supplies, reducing subsidies and support for scientific research, slowing the pace of scientific research and reducing the profits of research companies. So tech stocks aren’t a good bet for short-term profits. However, in the long run, in the next few decades, scientific and technological innovation is the first driving force to promote national development. Countries will provide long-term support and investment to the science and technology industry if the capital allows, so the long-term development of science and technology stocks is considerable.</p>
-</li>
-<li><h2 id="Financial-service-and-product-durable"><a href="#Financial-service-and-product-durable" class="headerlink" title="Financial service and product durable"></a>Financial service and product durable</h2><p>I bought shares in Midea because, personally thinking, it’s a leader in electronics, and it’s been innovative lately. Although last year it was neck and neck with Gree, but this year it occupied more than half of the market, the market value of 509.9 billion, we think it is a good choice to invest in it. So we bought 2,227 shares of 000333 and they all went up well.<br>Financial services sector stocks, I chose to buy 4782 shares of 002142. Ningbo Bank in the third quarter overall partial stable, the market down banking business is relatively stable. Third quarter results in line with expectations. The scale of expansion is relatively fast. Under the positive adjustment of the asset-liability structure, the interest spread is widening, and the asset quality continues to be excellent. We expect the company’s net profit growth in 2020 and 2021 to be 5.1% and 11.6% respectively. Citic Group fell a lot after the rally, and we are still watching.</p>
-</li>
-</ul>
+  {% include '_partials/pagination.swig' %}
+{% endblock %}
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://example.com/2020/11/21/A-brief-overview-of-the-investment-strategies-in-the-middle-of-KWHS/" data-id="ckhrq15wm00004ku15l4mhztn" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-
-
-</section>
-        
-          <aside id="sidebar">
-  
-    
-
-  
-    
-
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/11/">November 2020</a></li></ul>
-    </div>
-  </div>
-
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2020/11/21/A-brief-overview-of-the-investment-strategies-in-the-middle-of-KWHS/">A brief overview of the investment strategies in the middle of KWHS</a>
-          </li>
-        
-      </ul>
-    </div>
-  </div>
-
-  
-</aside>
-        
-      </div>
-      <footer id="footer">
-  
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2020 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
-  </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
-  
-    <a href="/" class="mobile-nav-link">Home</a>
-  
-    <a href="/archives" class="mobile-nav-link">Archives</a>
-  
-</nav>
-    
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
-
-
-  
-<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-
-  
-<script src="/fancybox/jquery.fancybox.pack.js"></script>
-
-
-
-
-<script src="/js/script.js"></script>
-
-
-
-
-  </div>
-</body>
-</html>
+{% block sidebar %}
+  {{ sidebar_template.render(false) }}
+{% endblock %}
